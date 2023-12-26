@@ -20,6 +20,7 @@ water potability, which is crucial for ensuring safe drinking water. Clean and p
 fundamental for preventing diseases and sustaining healthy communities. Additionally, it plays a
 vital role in economic development and environmental sustainability.
 
+Dataset was taken from [Kaggle](https://www.kaggle.com/datasets/adityakadiwal/water-potability).
 ## Essential Libraries
 To perform data analysis, develop a model, and create the API, we'll need several libraries:
 - **Data Analysis and Visualization:**
