@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Water Potability Prediction</title>
+</head>
+<body>
+    <h1>Water Potability Prediction</h1>
+    <form method="post" action="/predict" onsubmit="prepareAndSubmit(event)">
+        <label for="ph">pH:</label>
+        <input type="float" step="0.00000000001" name="ph" required><br><br>
+        <label for="Hardness">Hardness:</label>
+        <input type="number" step="0.0000000000000001" name="Hardness" required><br><br>
+        <label for="Solids">Solids:</label>
+        <input type="number" step="0000000000.00000000001" name="Solids" required><br><br>
+        <label for="Chloramines">Chloramines:</label>
+        <input type="number" step="0.00000000001" name="Chloramines" required><br><br>
+        <label for="Sulfate">Sulfate:</label>
+        <input type="number" step="0.00000000001" name="Sulfate" required><br><br>
+        <label for="Conductivity">Conductivity:</label>
+        <input type="number" step="0.00000000001" name="Conductivity" required><br><br>
+        <label for="Organic_carbon">Organic_carbon:</label>
+        <input type="number" step="0.00000000001" name="Organic_carbon" required><br><br>
+        <label for="Trihalomethanes">Trihalomethanes:</label>
+        <input type="number" step="0.00000000001" name="Trihalomethanes" required><br><br>
+        <label for="Turbidity">Turbidity:</label>
+        <input type="number" step="0.00000000001" name="Turbidity" required><br><br>
+        <input type="hidden" name="json_data" id="json_data" value="">
+        <input type="submit" value="Predict">
+    </form>    
+    {% if prediction is not none %}
+    <h2>Prediction Result:</h2>
+    <p>The water is {% if prediction == 1 %}potable{% else %}not potable{% endif %}.</p>
+    {% endif %}
+    <script>
+        function prepareAndSubmit(event) {
+            event.preventDefault(); // Prevent the default form submission
+
+            // Create an object to hold the input values
+            const data = {
+                ph: parseFloat(document.querySelector('input[name="ph"]').value),
+                Hardness: parseFloat(document.querySelector('input[name="Hardness"]').value),
+                Solids: parseFloat(document.querySelector('input[name="Solids"]').value),
+                Chloramines: parseFloat(document.querySelector('input[name="Chloramines"]').value),
+                Sulfate: parseFloat(document.querySelector('input[name="Sulfate"]').value),
+                Conductivity: parseFloat(document.querySelector('input[name="Conductivity"]').value),
+                Organic_carbon: parseFloat(document.querySelector('input[name="Organic_carbon"]').value),
+                Trihalomethanes: parseFloat(document.querySelector('input[name="Trihalomethanes"]').value),
+                Turbidity: parseFloat(document.querySelector('input[name="Turbidity"]').value),
+            };
+
+            // Set the hidden input field value to the JSON representation of the data
+            document.querySelector('#json_data').value = JSON.stringify(data);
+
+            // Submit the form
+            event.target.submit();
+        }
+    </script>
+</body>
+</html>
