@@ -117,7 +117,7 @@ The project features a custom-built API using FastAPI, which allows users to mak
 
 An interactive HTML form was integrated with the API to facilitate easy prediction of water potability. Users can input water quality metrics such as pH, Hardness, Solids, Chloramines, Sulfate, Conductivity, Organic Carbon, Trihalomethanes, and Turbidity. Upon submitting the form, the prediction is computed and displayed.
 
-![Prediction](Images/prediction.jpg)
-
+![Prediction](Images/prediction1.jpg)
+![Prediction](Images/prediction2.jpg)
 ---
 
