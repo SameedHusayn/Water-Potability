@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Water Potability Prediction</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <h1>Water Potability Prediction</h1>
@@ -20,7 +21,7 @@
         <input type="number" step="0.00000000001" name="Sulfate" required><br><br>
         <label for="Conductivity">Conductivity:</label>
         <input type="number" step="0.00000000001" name="Conductivity" required><br><br>
-        <label for="Organic_carbon">Organic_carbon:</label>
+        <label for="Organic_carbon">Organic Carbon:</label>
         <input type="number" step="0.00000000001" name="Organic_carbon" required><br><br>
         <label for="Trihalomethanes">Trihalomethanes:</label>
         <input type="number" step="0.00000000001" name="Trihalomethanes" required><br><br>
@@ -30,13 +31,12 @@
         <input type="submit" value="Predict">
     </form>    
     {% if prediction is not none %}
-    <h2>Prediction Result:</h2>
+    <h2>Prediction:</h2>
     <p>The water is {% if prediction == 1 %}potable{% else %}not potable{% endif %}.</p>
     {% endif %}
     <script>
         function prepareAndSubmit(event) {
             event.preventDefault(); // Prevent the default form submission
-
             // Create an object to hold the input values
             const data = {
                 ph: parseFloat(document.querySelector('input[name="ph"]').value),

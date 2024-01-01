@@ -10,7 +10,7 @@ from sklearn.preprocessing import StandardScaler
 app = FastAPI()
 
 # Load the SVM model from the pickle fileho
-model = joblib.load("model.pkl")
+model = joblib.load("D:\\Code\\Water Potability\\Water-Potability\\Potability_API\\model.pkl")
 
 # Create a Pydantic model to define the request payload
 class WaterPotabilityRequest(BaseModel):

@@ -1,0 +1,76 @@
+/* styles.css */
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+form {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    max-width: 500px;
+    width: 100%;
+}
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+h1 {
+    color: #333;
+    text-align: center;
+}
+
+label {
+    /* Ensure there's enough space for the text */
+    padding-right: 5px; /* Add padding to the right of the label text */
+    display: inline-block; /* This ensures that the label is in line with the input */
+    min-width: 100px; /* Set a minimum width for the label */
+    vertical-align: top; /* Aligns the label to the top of the input, in case of multiple lines */
+}
+
+input[type="float"],
+input[type="number"] {
+    padding: 8px;
+    margin-bottom: 5px; /* Adjust as necessary */
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    width: calc(100% - 16px); /* Subtract the total padding from the width to ensure it fits in the container */
+    display: inline-block;
+    vertical-align: top; /* Aligns the input to the top */
+}
+
+input[type="submit"] {
+    padding: 15px 225px; /* Increased padding for larger button size */
+    font-size: 16px; /* Larger font size for the text in the button */
+    border: none; /* Optional: removes the border */
+    border-radius: 5px; /* Rounded corners for the button */
+    background-color: #5cb85c; /* Background color for the button */
+    color: white; /* Text color for the button */
+    cursor: pointer; /* Changes the cursor to a pointer to indicate it's clickable */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Optional: adds a subtle shadow for depth */
+    transition: background-color 0.3s; /* Smooth transition for hover effect */
+}
+
+input[type="submit"]:hover {
+    background-color: #4cae4c; /* Slightly darker shade on hover */
+}
+
+.result {
+    text-align: center;
+    margin-top: 20px;
+    padding: 20px;
+    background-color: #dff0d8;
+    border-color: #d6e9c6;
+    color: #3c763d;
+    border-radius: 4px;
+    display: none; /* Hide by default */
+}
