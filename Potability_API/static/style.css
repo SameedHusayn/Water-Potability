@@ -19,16 +19,26 @@ form {
     max-width: 500px;
     width: 100%;
 }
-*::before,
+/* *::before,
 *::after {
     box-sizing: border-box;
-}
+} */
 
 h1 {
     color: #333;
-    text-align: center;
+    text-align: center; /* Align text to the center  */
+    margin-right: 250px; /* Add a margin to the right side of the heading */
 }
 
+h2 {
+    display: block;
+    font-size: 1.5em;
+    margin-block-start: 20px;
+    margin-block-end: 20px;
+    margin-inline-start: 20px;
+    margin-inline-end: 2px;
+    font-weight: bold;
+}
 label {
     /* Ensure there's enough space for the text */
     padding-right: 5px; /* Add padding to the right of the label text */
@@ -72,5 +82,4 @@ input[type="submit"]:hover {
     border-color: #d6e9c6;
     color: #3c763d;
     border-radius: 4px;
-    display: none; /* Hide by default */
 }

@@ -1,0 +1,1 @@
+"D:\\Code\Water Potability\\Water-Potability\\Potability_API\\templates"

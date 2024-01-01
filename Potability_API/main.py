@@ -1,5 +1,6 @@
 from fastapi import FastAPI, Request, Form
 from fastapi.templating import Jinja2Templates
+from fastapi.staticfiles import StaticFiles
 from pydantic import BaseModel
 import joblib
 import numpy as np
@@ -8,6 +9,7 @@ from sklearn.preprocessing import StandardScaler
 
 # Create an instance of the FastAPI class
 app = FastAPI()
+app.mount("/static", StaticFiles(directory="D:\\Code\\Water Potability\\Water-Potability\\Potability_API\\static"), name="static")
 
 # Load the SVM model from the pickle fileho
 model = joblib.load("D:\\Code\\Water Potability\\Water-Potability\\Potability_API\\model.pkl")
@@ -25,7 +27,7 @@ class WaterPotabilityRequest(BaseModel):
     Turbidity: float
 
 # Create an instance of the Jinja2Templates for rendering HTML templates
-templates = Jinja2Templates(directory="templates")
+templates = Jinja2Templates(directory=r"D:\Code\Water Potability\Water-Potability\Potability_API\templates")
 
 # Define a function to make predictions
 def predict_potability(features: WaterPotabilityRequest):
